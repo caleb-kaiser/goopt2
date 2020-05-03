@@ -9,7 +9,7 @@ const cors = require('cors');
 
 app.use(cors());
 
-app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static('./client/build'));
 
 
 app.get('/api/pull', (req, res) => {
@@ -22,7 +22,7 @@ app.get('/api/pull', (req, res) => {
 });
 
 app.get('/*', function (req, res) {
-   res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+   res.sendFile('./client/build/index.html');
  });
 
 app.listen(8080, err => {
