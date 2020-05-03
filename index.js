@@ -32,5 +32,3 @@ app.listen(8000, err => {
     console.log('api is running on 8000');
   }
 });
-
-//module.exports = app;
