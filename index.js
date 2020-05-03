@@ -18,6 +18,8 @@ app.get('/api/pull', (req, res) => {
     db.collection('quotes').find({ }, {projection:{_id: 0}}).toArray().then(results => {
       res.json(results);
     });
+  }).catch(err => {
+    console.log(err);
   });
 });
 
