@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Button from './Button.js';
 import Flash from './Flash.js';
+import About from './About.js';
 import './Main.css';
 
+// Call API for sentences
 const getSentences = async () => {
   let response = await fetch('/api/pull');
   console.log(response);
@@ -25,6 +27,7 @@ function Main() {
   const [correct, setCorrect] = useState();
   const [rounds, setRounds] = useState(0);
   const [flash, setFlash] = useState(null);
+  const [showAbout, setAbout] = useState(false);
 
   // Hook for refreshing game
   useEffect(() => {
@@ -58,6 +61,13 @@ function Main() {
     }
   }, [rounds]);
 
+  // Hook for showing About
+  useEffect(() => {
+    if (rounds == 3) {
+      setAbout(true);
+    }
+  }, [rounds]);
+
   // Function for submitting answers
   const submitAnswer = (answer) => {
     if (answer === sentences[sentences.length - 1].ml) {
@@ -76,6 +86,7 @@ function Main() {
         <Button submitAnswer={submitAnswer} isML={false} title="Goop Published This"  />
         <Button submitAnswer={submitAnswer} isML={true} title="A Robot Wrote This" />
       </div>
+      {showAbout && <About />}
     </div>
   )
 }

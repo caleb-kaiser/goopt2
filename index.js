@@ -1,7 +1,7 @@
 require('dotenv').config()
 const express = require('express');
 const app = express();
-const URI = 'mongodb+srv://goopt2:swingswingswing@cluster0-9oxxt.mongodb.net/test?retryWrites=true&w=majority';
+const URI = process.env.MONGO_URI;
 const {MongoClient} = require('mongodb');
 const client = new MongoClient(URI, { useUnifiedTopology: true});
 const path = require('path');

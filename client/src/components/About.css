@@ -1,0 +1,18 @@
+.about {
+  width: 75%;
+  padding: 8px;
+  margin-top: 64px;
+  background-color: black;
+  color: white;
+  opacity: .8;
+}
+
+.about a {
+  color: white;
+}
+
+@media (max-width: 500px) {
+  .about {
+    margin-top: 32px;
+  }
+}
