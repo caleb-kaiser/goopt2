@@ -7,7 +7,6 @@ import './Main.css';
 // Call API for sentences
 const getSentences = async () => {
   let response = await fetch('/api/pull');
-  console.log(response);
   let data = await response.json();
   for (let x = data.length - 1; x > 0; x--) {
     let y = Math.floor(Math.random() * (x - 1));
