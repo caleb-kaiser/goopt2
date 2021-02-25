@@ -62,7 +62,7 @@ function Main() {
 
   // Hook for showing About
   useEffect(() => {
-    if (rounds == 3) {
+    if (rounds == 2) {
       setAbout(true);
     }
   }, [rounds]);
